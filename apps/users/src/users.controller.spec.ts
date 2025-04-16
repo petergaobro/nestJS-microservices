@@ -14,9 +14,17 @@ describe('UsersController', () => {
     usersController = app.get<UsersController>(UsersController);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(usersController.getHello()).toBe('Hello World!');
+  // describe('root', () => {
+  //   it('should return "Hello World!"', () => {
+  //     expect(usersController.getHello()).toBe('Hello World!');
+  //   });
+  // });
+  describe('findAll', () => {
+    it('should return an array of users', () => {
+      expect(usersController.findAll()).toEqual([
+        { id: 1, firstName: 'John', lastName: 'Doe', age: 25 },
+        { id: 2, firstName: 'Jane', lastName: 'Doe', age: 24 },
+      ]);
     });
   });
 });
