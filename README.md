@@ -104,3 +104,18 @@ geateway
 recap
 books application
 contracts
+
+# add users module to the gateway application
+nest generate module users --project bookstore-api-gateway
+
+# add users service to the users module
+nest generate service users --project bookstore-api-gateway
+
+# add users controller to the users module
+nest generate controller users --project bookstore-api-gateway
+
+# check the error in bookstore-api-gateway folder
+nest start bookstore-api-gateway --watch
+
+# check the error in users folder
+nest start users --watch
